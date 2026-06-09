@@ -1,0 +1,46 @@
+{
+  "version": 1,
+  "author": "Anonymous maker",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-nano", "id": "nano", "top": 0, "left": 0, "attrs": {} },
+    {
+      "type": "wokwi-rgb-led",
+      "id": "rgb1",
+      "top": -149.6,
+      "left": -85.3,
+      "attrs": { "common": "cathode" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": -92.05,
+      "left": -9.6,
+      "attrs": { "value": "1000" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": -72.85,
+      "left": -19.2,
+      "attrs": { "value": "1000" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r3",
+      "top": -44.05,
+      "left": -28.8,
+      "attrs": { "value": "1000" }
+    }
+  ],
+  "connections": [
+    [ "rgb1:R", "r1:1", "green", [ "v0" ] ],
+    [ "rgb1:G", "r2:1", "green", [ "v0" ] ],
+    [ "rgb1:B", "r3:1", "green", [ "v0" ] ],
+    [ "r3:2", "nano:11", "green", [ "v0" ] ],
+    [ "r2:2", "nano:10", "green", [ "v0" ] ],
+    [ "r1:2", "nano:9", "green", [ "v0" ] ],
+    [ "nano:GND.1", "rgb1:COM", "black", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
